@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from your version control system
-                git 'https://github.com/muthuramanathanm/jenkins-cicd.git'
+                git 'https://github.com/PriyeshVenkatesan/Jenkins.git'
             }
         }
         
@@ -39,14 +39,14 @@ pipeline {
             echo 'Deployment successful!'
             emailext subject: 'Pipeline Status - Success',
                       body: 'Your pipeline has been successfully deployed.',
-                      to: 'muthuramanathan.manickam@gmail.com'
+                      to: 'priyeshathiyan@gmail.com'
         }
         failure {
             // Notify on deployment failure
             echo 'Deployment failed!'
             emailext subject: 'Pipeline Status - Failure',
                       body: 'Your pipeline has failed to deploy.',
-                      to: 'muthuramanathan.manickam@gmail.com'
+                      to: 'priyeshathiyan@gmail.com'
         }
     }
 
